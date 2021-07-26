@@ -38,7 +38,7 @@ body {
     cursor: pointer;
 }
 .info-container {
-    width: 1080px;
+    width: 100%;
     margin: 20px auto 0;
     background-color: #f6f6f6;
     padding: 20px;
@@ -46,18 +46,35 @@ body {
     overflow: hidden;
     border: 2px solid #2196f3;
 }
+@media (max-width:770px) {
+	.info-container {
+	margin: 0;
+        text-align: center;
+	}
+}
 .info-container .name {
     float: left;
     width: 50%;
+}
+@media (max-width:770px) {
+	.info-container .name {
+	width: 100%;
+	}
 }
 .info-container .tries {
     float: left;
     width: 50%;
     text-align: right;
 }
+@media (max-width:770px) {
+	.info-container .tries {
+	width: 100%;
+        text-align: center;
+	}
+}
 .memory-game-blocks {
     display: flex;
-    width: 1100px;
+    width: 100%;
     flex-wrap: wrap;
     margin: 20px auto;
 }
@@ -66,7 +83,7 @@ body {
 }
 
 .memory-game-blocks .game-block {
-    height: 200px;
+    height: 150px;
     transition: transform .5s;
     -webkit-transition: transform .5s;
     -moz-transition: transform .5s;
@@ -75,12 +92,27 @@ body {
     transform-style: preserve-3d;
     cursor: pointer;
     position: relative;
-    flex: 1 0 200px;
+    flex: 1 0 150px;
     margin: 0 10px 20px;
+}
+@media (max-width:770px) {
+	.memory-game-blocks .game-block {
+	margin: 0;
+    height: 150px;
+    transition: transform .5s;
+    -webkit-transition: transform .5s;
+    -moz-transition: transform .5s;
+    -ms-transition: transform .5s;
+    -o-transition: transform .5s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+    flex: 1 0 100px;
+	}
 }
 .memory-game-blocks .game-block .front {
     background-color: #333;
-    line-height: 200px;
+    line-height: 130px;
 }
 .memory-game-blocks .game-block .front::before {
     content: '?';
@@ -99,7 +131,11 @@ body {
 .memory-game-blocks .game-block img {
     width: 140px;
     height: 140px;
-    margin-top: 30px;
+}
+@media (max-width:770px) {
+	.memory-game-blocks .game-block img {
+	width: 100px;
+	}
 }
 .memory-game-blocks .game-block .face {
     position: absolute;
@@ -118,4 +154,25 @@ body {
     -ms-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
     pointer-events: none;
+}
+container {
+	margin: auto;
+}
+/* small */
+@media (min-width:768px) {
+    .container {
+    width: 100%; 
+    }
+}
+/* medium */
+@media (min-width:992px) {
+    .container {
+    width: 100%; 
+    }
+}
+/* large */
+@media (min-width:1200px) {
+    .container {
+    width: 100%; 
+    }
 }
